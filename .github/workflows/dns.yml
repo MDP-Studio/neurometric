@@ -1,0 +1,18 @@
+name: Attach neurometric.mdpstudio.com.au
+
+on:
+  workflow_dispatch:
+
+jobs:
+  attach:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Attach custom domain + CF CNAME
+        uses: MDP-Studio/cf-dns-action@v1
+        with:
+          subdomain: neurometric
+          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          cf-zone-id: ${{ secrets.CF_ZONE_ID }}
+          cf-api-token: ${{ secrets.CF_API_TOKEN }}
+          wait-for-cert: 'true'
