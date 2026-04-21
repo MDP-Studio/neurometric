@@ -1,0 +1,19 @@
+{
+  "name": "NeuroMetric",
+  "short_name": "NeuroMetric",
+  "description": "Personal cognitive self-assessment instrument. Within-subject. On-device. Honest.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#131313",
+  "theme_color": "#131313",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

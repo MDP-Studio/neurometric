@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>COGNITIVE_MONOLITH - Session Status</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdeac",
+                        "secondary": "#b1cad7",
+                        "surface-container-highest": "#353534",
+                        "on-tertiary": "#432c00",
+                        "on-primary-fixed": "#00105b",
+                        "surface-tint": "#bac3ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-container": "#fff6ef",
+                        "outline": "#8f909d",
+                        "surface-dim": "#131313",
+                        "on-primary": "#15267b",
+                        "outline-variant": "#454651",
+                        "on-tertiary-fixed": "#281900",
+                        "on-surface-variant": "#c6c5d3",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#051e28",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#334a55",
+                        "surface-variant": "#353534",
+                        "primary-fixed": "#dee0ff",
+                        "on-secondary": "#1c333e",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#bac3ff",
+                        "primary": "#bac3ff",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#ffba38",
+                        "on-primary-container": "#f8f6ff",
+                        "on-primary-fixed-variant": "#2f3f92",
+                        "on-surface": "#e5e2e1",
+                        "surface": "#131313",
+                        "tertiary": "#ffba38",
+                        "inverse-on-surface": "#313030",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#334a55",
+                        "inverse-surface": "#e5e2e1",
+                        "background": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "tertiary-container": "#976900",
+                        "secondary-fixed": "#cde6f4",
+                        "on-secondary-container": "#a0b9c5",
+                        "inverse-primary": "#4858ab",
+                        "secondary-fixed-dim": "#b1cad7",
+                        "surface-bright": "#393939",
+                        "primary-container": "#5c6bc0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["JetBrains Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #131313; color: #e5e2e1; margin: 0; padding: 0; }
+        .font-mono-tech { font-family: 'JetBrains Mono', monospace; }
+        .font-display { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; }
+        
+        /* Utility for 1px internal lines, enforcing the "No-Line" rule except where necessary for technical feel */
+        .tech-border-b { border-bottom: 1px solid rgba(69, 70, 81, 0.3); }
+        .tech-border-r { border-right: 1px solid rgba(69, 70, 81, 0.3); }
+        
+        /* Ghost border for containers */
+        .ghost-border { outline: 1px solid rgba(69, 70, 81, 0.15); outline-offset: -1px; }
+        
+        /* Hide scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #353534; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen flex overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-64 right-0 z-50 flex justify-between items-center px-6 bg-[#131313] rounded-none w-full h-12 border-b border-[#2a2a2a] flat no-shadows">
+<div class="flex items-center gap-4">
+<span class="text-xl font-black text-[#bac3ff] tracking-tighter font-display">MONOLITH_OS</span>
+<span class="font-mono-tech text-[10px] text-secondary tracking-widest uppercase">SYS_ACTIVE</span>
+</div>
+<div class="flex items-center gap-4 text-secondary">
+<span class="font-mono-tech text-[10px] tracking-widest hidden md:block">T-MINUS 00:00:00</span>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-sm hover:text-primary transition-colors cursor-pointer" data-icon="settings_input_component">settings_input_component</span>
+<span class="material-symbols-outlined text-sm hover:text-primary transition-colors cursor-pointer" data-icon="sensors">sensors</span>
+<span class="material-symbols-outlined text-sm hover:text-primary transition-colors cursor-pointer" data-icon="history">history</span>
+<span class="material-symbols-outlined text-sm hover:text-primary transition-colors cursor-pointer" data-icon="power_settings_new">power_settings_new</span>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-screen flex flex-col pt-8 pb-4 bg-[#131313] rounded-none w-64 border-r border-[#2a2a2a] z-40">
+<div class="px-6 mb-8 flex flex-col items-start">
+<div class="w-10 h-10 bg-surface-container-high mb-4 flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-xl">account_tree</span>
+</div>
+<h2 class="text-lg font-bold text-[#bac3ff] tracking-tight font-display mb-1">COGNITIVE_MONOLITH</h2>
+<p class="font-mono-tech text-[10px] text-secondary tracking-widest">V.4.0.2_STABLE</p>
+</div>
+<div class="flex-1 overflow-y-auto w-full px-2">
+<!-- Active Tab: Home -->
+<a class="flex items-center gap-3 px-4 py-3 mb-1 text-[#bac3ff] bg-[#1c1b1b] border-l-4 border-[#bac3ff] font-bold transition-all duration-75" href="#">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span class="font-mono-tech tracking-tighter uppercase text-xs">Home</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-3 px-4 py-3 mb-1 text-[#b1cad7] opacity-70 hover:bg-[#2a2a2a] hover:text-[#bac3ff] transition-all duration-75 border-l-4 border-transparent hover:border-surface-container-highest" href="#">
+<span class="material-symbols-outlined text-sm">analytics</span>
+<span class="font-mono-tech tracking-tighter uppercase text-xs">Results</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 mb-1 text-[#b1cad7] opacity-70 hover:bg-[#2a2a2a] hover:text-[#bac3ff] transition-all duration-75 border-l-4 border-transparent hover:border-surface-container-highest" href="#">
+<span class="material-symbols-outlined text-sm">database</span>
+<span class="font-mono-tech tracking-tighter uppercase text-xs">Exploration</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 mb-1 text-[#b1cad7] opacity-70 hover:bg-[#2a2a2a] hover:text-[#bac3ff] transition-all duration-75 border-l-4 border-transparent hover:border-surface-container-highest" href="#">
+<span class="material-symbols-outlined text-sm">menu_book</span>
+<span class="font-mono-tech tracking-tighter uppercase text-xs">Methodology</span>
+</a>
+</div>
+<div class="px-4 mt-auto">
+<button class="w-full bg-surface-container-highest text-primary font-mono-tech text-[10px] py-3 tracking-widest uppercase hover:bg-surface-bright transition-colors text-left pl-4 border-l-2 border-primary flex justify-between items-center group">
+                INITIATE_SESSION
+                <span class="material-symbols-outlined text-xs group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-12 w-full h-[calc(100vh-3rem)] overflow-y-auto bg-surface p-8">
+<div class="max-w-7xl mx-auto flex flex-col gap-8">
+<!-- Context Header (Intentional Asymmetry) -->
+<div class="flex justify-between items-end w-full border-b border-surface-container-high pb-4">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-2 h-2 bg-primary"></div>
+<span class="font-mono-tech text-[10px] text-primary tracking-widest uppercase">System Ready</span>
+</div>
+<h1 class="font-display text-4xl text-on-surface font-bold tracking-tighter">SESSION_STATUS</h1>
+</div>
+<div class="text-right">
+<p class="font-mono-tech text-xs text-secondary mb-1">SEQ_ID</p>
+<p class="font-mono-tech text-lg text-primary">8492-B</p>
+</div>
+</div>
+<!-- Primary Action Module -->
+<div class="bg-surface-container-low p-8 ghost-border relative overflow-hidden group">
+<!-- Subtle background accent -->
+<div class="absolute top-0 right-0 w-64 h-full bg-gradient-to-l from-surface-container-high to-transparent opacity-20 pointer-events-none"></div>
+<div class="flex flex-col md:flex-row justify-between items-start gap-8 relative z-10">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-2 py-1 bg-secondary-container text-on-secondary-container font-mono-tech text-[10px] uppercase mb-4">
+<span class="material-symbols-outlined text-[10px]">timer</span>
+                            EST_DURATION: 05:00
+                        </div>
+<h2 class="font-display text-3xl font-bold text-on-surface mb-4">Psychomotor Vigilance Task (PVT)</h2>
+<p class="text-sm text-on-surface-variant font-body leading-relaxed mb-6">
+                            Measure sustained attention and cognitive fatigue. The subject is required to respond to a visual stimulus appearing at random intervals. Precision and reaction time (RT) are recorded in milliseconds.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary hover:bg-primary-container text-on-primary font-mono-tech text-xs px-6 py-3 tracking-widest uppercase transition-colors flex items-center gap-2 font-bold bg-gradient-to-b from-primary to-[#aeb7ef]">
+<span class="material-symbols-outlined text-sm" data-weight="fill">play_arrow</span>
+                                INITIATE SESSION
+                            </button>
+<button class="bg-surface-container-highest hover:bg-surface-bright text-on-surface font-mono-tech text-xs px-6 py-3 tracking-widest uppercase transition-colors">
+                                DEFER (24H)
+                            </button>
+</div>
+</div>
+<!-- Technical Meta Data Panel -->
+<div class="bg-surface-container-highest p-4 min-w-[240px] shrink-0 border-t-2 border-primary">
+<h3 class="font-mono-tech text-[10px] text-secondary tracking-widest uppercase mb-4 border-b border-outline-variant pb-2">Protocol Parameters</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="font-mono-tech text-xs text-secondary">STIM_TYPE</span>
+<span class="font-mono-tech text-xs text-on-surface">VISUAL_RED</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-mono-tech text-xs text-secondary">ISI_MIN</span>
+<span class="font-mono-tech text-xs text-on-surface">2000ms</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-mono-tech text-xs text-secondary">ISI_MAX</span>
+<span class="font-mono-tech text-xs text-on-surface">10000ms</span>
+</div>
+<div class="flex justify-between items-center pt-2 mt-2 border-t border-outline-variant">
+<span class="font-mono-tech text-xs text-tertiary">CALIBRATION</span>
+<span class="font-mono-tech text-xs text-tertiary flex items-center gap-1">
+<div class="w-1 h-1 bg-tertiary"></div> REQ
+                                </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Data Layer (Bento Layout) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Widget 1: Latest Results -->
+<div class="col-span-1 lg:col-span-2 bg-surface-container-low p-6 ghost-border flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-mono-tech text-xs text-secondary tracking-widest uppercase">LATEST_PVT (T-24H)</h3>
+<span class="material-symbols-outlined text-secondary text-sm">analytics</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 flex-1">
+<div class="bg-surface p-4 flex flex-col justify-between">
+<span class="font-mono-tech text-[10px] text-secondary mb-2">MEAN_RT</span>
+<div class="flex items-end gap-2">
+<span class="font-mono-tech text-xl text-primary">245</span>
+<span class="font-mono-tech text-[10px] text-secondary pb-1">ms</span>
+</div>
+<div class="mt-2 text-[10px] font-mono-tech text-on-surface-variant">
+<span class="text-tertiary">↑ 12ms</span> vs baseline
+                            </div>
+</div>
+<div class="bg-surface p-4 flex flex-col justify-between">
+<span class="font-mono-tech text-[10px] text-secondary mb-2">LAPSES (&gt;500ms)</span>
+<div class="flex items-end gap-2">
+<span class="font-mono-tech text-xl text-on-surface">02</span>
+</div>
+<div class="mt-2 text-[10px] font-mono-tech text-on-surface-variant">
+<span>- 01</span> vs baseline
+                            </div>
+</div>
+<div class="bg-surface p-4 flex flex-col justify-between">
+<span class="font-mono-tech text-[10px] text-secondary mb-2">FALSE_STARTS</span>
+<div class="flex items-end gap-2">
+<span class="font-mono-tech text-xl text-on-surface">00</span>
+</div>
+<div class="mt-2 text-[10px] font-mono-tech text-on-surface-variant">
+<span>--</span> no change
+                            </div>
+</div>
+<div class="bg-surface p-4 flex flex-col justify-between border-b-2 border-tertiary">
+<span class="font-mono-tech text-[10px] text-secondary mb-2">FATIGUE_IDX</span>
+<div class="flex items-end gap-2">
+<span class="font-mono-tech text-xl text-tertiary">0.84</span>
+</div>
+<div class="mt-2 text-[10px] font-mono-tech text-on-surface-variant">
+<span class="text-tertiary">ELEVATED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Widget 2: Environmental Constraints -->
+<div class="bg-surface-container-low p-6 ghost-border">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-mono-tech text-xs text-secondary tracking-widest uppercase">ENV_CONSTRAINTS</h3>
+<span class="material-symbols-outlined text-secondary text-sm">device_thermostat</span>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_box</span>
+<span class="font-mono-tech text-xs text-on-surface">Ambient Light &lt; 50 lux</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_box</span>
+<span class="font-mono-tech text-xs text-on-surface">Acoustic Noise &lt; 40 dB</span>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-3 h-3 bg-tertiary"></div>
+<span class="font-mono-tech text-xs text-tertiary">Subject Fasting &gt; 2H (UNVERIFIED)</span>
+</li>
+</ul>
+<div class="mt-8 pt-4 border-t border-surface-container-high">
+<button class="text-primary font-mono-tech text-[10px] tracking-widest uppercase hover:text-primary-container transition-colors flex items-center gap-1">
+                            OVERRIDE CONSTRAINTS <span class="material-symbols-outlined text-[10px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

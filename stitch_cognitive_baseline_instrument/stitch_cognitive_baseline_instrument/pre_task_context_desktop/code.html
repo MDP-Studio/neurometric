@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CONTEXT_ENTRY: PRE-SESSION</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdeac",
+                        "secondary": "#b1cad7",
+                        "surface-container-highest": "#353534",
+                        "on-tertiary": "#432c00",
+                        "on-primary-fixed": "#00105b",
+                        "surface-tint": "#bac3ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-container": "#fff6ef",
+                        "outline": "#8f909d",
+                        "surface-dim": "#131313",
+                        "on-primary": "#15267b",
+                        "outline-variant": "#454651",
+                        "on-tertiary-fixed": "#281900",
+                        "on-surface-variant": "#c6c5d3",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#051e28",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#334a55",
+                        "surface-variant": "#353534",
+                        "primary-fixed": "#dee0ff",
+                        "on-secondary": "#1c333e",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#bac3ff",
+                        "primary": "#bac3ff",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#ffba38",
+                        "on-primary-container": "#f8f6ff",
+                        "on-primary-fixed-variant": "#2f3f92",
+                        "on-surface": "#e5e2e1",
+                        "surface": "#131313",
+                        "tertiary": "#ffba38",
+                        "inverse-on-surface": "#313030",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#334a55",
+                        "inverse-surface": "#e5e2e1",
+                        "background": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "tertiary-container": "#976900",
+                        "secondary-fixed": "#cde6f4",
+                        "on-secondary-container": "#a0b9c5",
+                        "inverse-primary": "#4858ab",
+                        "secondary-fixed-dim": "#b1cad7",
+                        "surface-bright": "#393939",
+                        "primary-container": "#5c6bc0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .ghost-border { outline: 1px solid rgba(69, 70, 81, 0.15); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 md:left-64 right-0 z-50 flex justify-between items-center px-6 bg-[#131313] text-[#bac3ff] font-['Space_Grotesk'] tracking-widest text-[10px] md:text-xs font-mono rounded-none w-full h-12 border-b border-[#2a2a2a] flat no shadows">
+<div class="text-xl font-black text-[#bac3ff] tracking-tighter">MONOLITH_OS</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#b1cad7] hover:bg-[#1c1b1b] transition-colors cursor-pointer p-1">settings_input_component</span>
+<span class="material-symbols-outlined text-[#b1cad7] hover:bg-[#1c1b1b] transition-colors cursor-pointer p-1">sensors</span>
+<span class="material-symbols-outlined text-[#b1cad7] hover:bg-[#1c1b1b] transition-colors cursor-pointer p-1">history</span>
+<span class="material-symbols-outlined text-[#b1cad7] hover:bg-[#1c1b1b] transition-colors cursor-pointer p-1">power_settings_new</span>
+</div>
+</header>
+<!-- SideNavBar (Hidden on Mobile) -->
+<nav class="hidden md:flex fixed left-0 top-0 h-screen flex-col pt-8 pb-4 bg-[#131313] text-[#bac3ff] font-['Space_Grotesk'] tracking-tighter uppercase text-xs md:text-sm font-mono rounded-none w-64 border-r border-[#2a2a2a] shadow-none bg-[#1c1b1b] tonal shifts, no shadows z-40 mt-12">
+<div class="px-6 mb-8 mt-4">
+<div class="text-lg font-bold text-[#bac3ff] tracking-tight font-['Space_Grotesk']">COGNITIVE_MONOLITH</div>
+<div class="text-[10px] text-secondary mt-1">V.4.0.2_STABLE</div>
+</div>
+<ul class="flex flex-col flex-grow">
+<!-- Navigation Suppressed for Task-Focused Pre-Session Context -->
+<!-- Navigation is hidden to focus user on the mandatory entry task -->
+</ul>
+<div class="px-6 mt-auto">
+<button class="w-full bg-surface-container-highest text-primary font-mono text-xs py-2 hover:bg-[#2a2a2a] hover:text-[#bac3ff] transition-all duration-75 flex items-center justify-center gap-2">
+<span>INITIATE_SESSION</span>
+<span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-12 px-6 md:px-12 md:ml-64 flex flex-col lg:flex-row gap-8 items-start justify-center min-h-screen">
+<!-- Left Column: Context Brief -->
+<div class="w-full lg:w-1/3 flex flex-col gap-6 lg:sticky lg:top-24">
+<div>
+<h1 class="font-headline text-3xl font-bold text-primary tracking-tighter mb-2">CONTEXT_ENTRY: <br/>PRE-SESSION</h1>
+<p class="text-secondary text-sm font-body leading-relaxed max-w-md">
+                    Baseline physiological parameters are required prior to initiating the cognitive assessment protocol. Accurate data input ensures calibrated analysis of results. Falsification will result in corrupted telemetry.
+                </p>
+</div>
+<div class="bg-surface-container-low p-4 ghost-border flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary">warning</span>
+<div>
+<h3 class="font-mono text-xs text-tertiary mb-1 uppercase tracking-widest">System Advisory</h3>
+<p class="text-xs text-on-surface-variant font-body">Current environmental sensors indicate sub-optimal ambient light. Adjust external conditions if possible.</p>
+</div>
+</div>
+<div class="mt-8 hidden lg:block">
+<img alt="Abstract rendering of geometric shapes floating in a dark void with subtle blue and orange neon outlines, emphasizing precision and scientific observation." class="w-full h-48 object-cover grayscale opacity-50 contrast-125 ghost-border" data-alt="Abstract rendering of geometric shapes floating in a dark void with subtle blue and orange neon outlines, emphasizing precision and scientific observation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF6iStQSFe5JTq2yW5S_rD5amIHuqn6gfqwm2q_LqULrn6ZNxnhmEAvryq1blT7SGe40Na19Nyj9S2ES4Tn-WV92mXtdBcUNB8oDFPgSxUXrxhT1ZWr3Ll4d6l24ywv4VUEsS_l83bXpTftSfzM6GhiE10VsXifZ_GkWp58JBzpVwEaR5tSffcJYNlp62aJQyPE2QPqUynxVcE7fxZAGbyu-QACM2XPXUDwNRreQQNKXoNS6ZAxnCcxhEf9kPXIsi2L_Em60k3USXy"/>
+</div>
+</div>
+<!-- Right Column: Technical Input Form -->
+<div class="w-full lg:w-1/2 bg-surface-container-lowest ghost-border p-8 flex flex-col gap-10">
+<div class="flex justify-between items-end border-b border-surface-container-high pb-4">
+<h2 class="font-mono text-sm text-primary uppercase tracking-widest">Physiological State</h2>
+<span class="font-mono text-[10px] text-secondary">ID: 948-B</span>
+</div>
+<!-- Input: Hours since waking -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div class="flex flex-col">
+<label class="font-mono text-xs text-on-surface uppercase mb-1">Hours Since Waking</label>
+<span class="text-[10px] text-on-surface-variant font-body">Decimal values accepted (e.g., 2.5)</span>
+</div>
+<div class="flex items-center bg-surface-container-low ghost-border">
+<button aria-label="Decrease" class="p-2 hover:bg-surface-container-highest transition-colors text-secondary">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-16 bg-transparent border-none text-center font-mono text-primary text-sm focus:ring-0" readonly="" type="text" value="0.0"/>
+<button aria-label="Increase" class="p-2 hover:bg-surface-container-highest transition-colors text-secondary">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<!-- Input: Hours since last meal -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div class="flex flex-col">
+<label class="font-mono text-xs text-on-surface uppercase mb-1">Hours Since Last Meal</label>
+<span class="text-[10px] text-on-surface-variant font-body">Include caloric beverages</span>
+</div>
+<div class="flex items-center bg-surface-container-low ghost-border">
+<button aria-label="Decrease" class="p-2 hover:bg-surface-container-highest transition-colors text-secondary">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-16 bg-transparent border-none text-center font-mono text-primary text-sm focus:ring-0" readonly="" type="text" value="0.0"/>
+<button aria-label="Increase" class="p-2 hover:bg-surface-container-highest transition-colors text-secondary">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<!-- Input: Caffeine -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-t border-surface-container-high pt-8">
+<div class="flex flex-col">
+<label class="font-mono text-xs text-on-surface uppercase mb-1">Caffeine Detected</label>
+<span class="text-[10px] text-on-surface-variant font-body">Ingestion within last 120 minutes</span>
+</div>
+<!-- Technical Toggle -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-none peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-secondary after:border-secondary after:border after:rounded-none after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container peer-checked:after:bg-primary"></div>
+<span class="ml-3 font-mono text-xs text-secondary peer-checked:text-primary uppercase w-8 text-right">NEG</span>
+</label>
+</div>
+<!-- Input: Self-Assessed Fatigue -->
+<div class="flex flex-col gap-4 border-t border-surface-container-high pt-8">
+<div class="flex justify-between items-end">
+<label class="font-mono text-xs text-on-surface uppercase mb-1">Self-Assessed Fatigue</label>
+<span class="font-mono text-[10px] text-primary">LVL_03</span>
+</div>
+<!-- Linear Data Stream / Slider alternative -->
+<div class="w-full h-8 bg-surface-container-high flex relative cursor-pointer group">
+<!-- Track filling -->
+<div class="h-full bg-primary-container w-[30%] border-r-2 border-primary opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<!-- Segment markers -->
+<div class="absolute inset-0 flex justify-between px-1 pointer-events-none">
+<div class="h-full w-px bg-surface opacity-50"></div>
+<div class="h-full w-px bg-surface opacity-50"></div>
+<div class="h-full w-px bg-surface opacity-50"></div>
+<div class="h-full w-px bg-surface opacity-50"></div>
+<div class="h-full w-px bg-surface opacity-50"></div>
+<div class="h-full w-px bg-surface opacity-50"></div>
+<div class="h-full w-px bg-surface opacity-50"></div>
+<div class="h-full w-px bg-surface opacity-50"></div>
+<div class="h-full w-px bg-surface opacity-50"></div>
+<div class="h-full w-px bg-surface opacity-50"></div>
+</div>
+</div>
+<div class="flex justify-between font-mono text-[10px] text-secondary">
+<span>MIN</span>
+<span>MAX</span>
+</div>
+</div>
+<!-- Primary Action -->
+<div class="mt-8 pt-8 border-t border-surface-container-high flex justify-end">
+<button class="bg-primary hover:bg-primary-container text-on-primary font-mono text-sm px-8 py-4 uppercase tracking-widest transition-colors flex items-center gap-3">
+<span>PROCEED TO TASK</span>
+<span class="material-symbols-outlined text-lg">terminal</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>

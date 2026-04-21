@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Psychomotor Vigilance Task</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;700&amp;family=Space+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ffdeac",
+                    "secondary": "#b1cad7",
+                    "surface-container-highest": "#353534",
+                    "on-tertiary": "#432c00",
+                    "on-primary-fixed": "#00105b",
+                    "surface-tint": "#bac3ff",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-low": "#1c1b1b",
+                    "on-tertiary-container": "#fff6ef",
+                    "outline": "#8f909d",
+                    "surface-dim": "#131313",
+                    "on-primary": "#15267b",
+                    "outline-variant": "#454651",
+                    "on-tertiary-fixed": "#281900",
+                    "on-surface-variant": "#c6c5d3",
+                    "on-error": "#690005",
+                    "on-secondary-fixed": "#051e28",
+                    "on-error-container": "#ffdad6",
+                    "secondary-container": "#334a55",
+                    "surface-variant": "#353534",
+                    "primary-fixed": "#dee0ff",
+                    "on-secondary": "#1c333e",
+                    "error-container": "#93000a",
+                    "primary-fixed-dim": "#bac3ff",
+                    "primary": "#bac3ff",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed-dim": "#ffba38",
+                    "on-primary-container": "#f8f6ff",
+                    "on-primary-fixed-variant": "#2f3f92",
+                    "on-surface": "#e5e2e1",
+                    "surface": "#131313",
+                    "tertiary": "#ffba38",
+                    "inverse-on-surface": "#313030",
+                    "on-background": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#334a55",
+                    "inverse-surface": "#e5e2e1",
+                    "background": "#131313",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container": "#201f1f",
+                    "on-tertiary-fixed-variant": "#604100",
+                    "tertiary-container": "#976900",
+                    "secondary-fixed": "#cde6f4",
+                    "on-secondary-container": "#a0b9c5",
+                    "inverse-primary": "#4858ab",
+                    "secondary-fixed-dim": "#b1cad7",
+                    "surface-bright": "#393939",
+                    "primary-container": "#5c6bc0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "0px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Space Grotesk"
+                    ],
+                    "body": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "JetBrains Mono",
+                            "monospace"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #000000; color: #e5e2e1; } /* Forcing absolute black for the PVT environment */
+    </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Chrome (Minimal) -->
+<header class="w-full flex justify-between items-start p-6 absolute top-0 left-0 z-50">
+<div class="flex flex-col gap-1">
+<span class="font-label text-xs text-secondary opacity-50 tracking-widest uppercase">Protocol: PVT-T</span>
+<span class="font-label text-[10px] text-tertiary opacity-70 tracking-widest uppercase">Subject Active</span>
+</div>
+<button class="flex items-center gap-2 text-secondary opacity-50 hover:opacity-100 hover:text-primary transition-colors group">
+<span class="font-label text-xs uppercase tracking-widest">Abort</span>
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</header>
+<!-- Main Canvas: Stimulus Area -->
+<main class="flex-1 flex items-center justify-center relative">
+<!-- Reaction Time Counter (Hidden/Visible state handled by JS ideally, static here for representation) -->
+<div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 font-label text-6xl md:text-8xl text-primary opacity-0">
+            000 ms
+        </div>
+<!-- Stimulus Dot -->
+<!-- Using a bright red (error color from config) for high contrast against black, maintaining a circle for the specific 'dot' requirement despite global 0px radius rule, as it's a specific scientific visual stimulus, not a UI component -->
+<div class="w-16 h-16 bg-error rounded-full" style="box-shadow: 0 0 20px rgba(255, 180, 171, 0.4);"></div>
+</main>
+<!-- Bottom Chrome (Minimal) -->
+<footer class="w-full flex justify-between items-end p-6 absolute bottom-0 left-0 z-50">
+<div class="font-label text-[10px] text-surface-variant uppercase tracking-widest">
+            Iteration 42 / 100
+        </div>
+<div class="font-label text-[10px] text-surface-variant uppercase tracking-widest flex items-center gap-2">
+<span class="w-2 h-2 bg-tertiary"></span> Awaiting Input
+        </div>
+</footer>
+</body></html>

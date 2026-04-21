@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Raw Data Plot - Monolith OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdeac",
+                        "secondary": "#b1cad7",
+                        "surface-container-highest": "#353534",
+                        "on-tertiary": "#432c00",
+                        "on-primary-fixed": "#00105b",
+                        "surface-tint": "#bac3ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-container": "#fff6ef",
+                        "outline": "#8f909d",
+                        "surface-dim": "#131313",
+                        "on-primary": "#15267b",
+                        "outline-variant": "#454651",
+                        "on-tertiary-fixed": "#281900",
+                        "on-surface-variant": "#c6c5d3",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#051e28",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#334a55",
+                        "surface-variant": "#353534",
+                        "primary-fixed": "#dee0ff",
+                        "on-secondary": "#1c333e",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#bac3ff",
+                        "primary": "#bac3ff",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#ffba38",
+                        "on-primary-container": "#f8f6ff",
+                        "on-primary-fixed-variant": "#2f3f92",
+                        "on-surface": "#e5e2e1",
+                        "surface": "#131313",
+                        "tertiary": "#ffba38",
+                        "inverse-on-surface": "#313030",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#334a55",
+                        "inverse-surface": "#e5e2e1",
+                        "background": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "tertiary-container": "#976900",
+                        "secondary-fixed": "#cde6f4",
+                        "on-secondary-container": "#a0b9c5",
+                        "inverse-primary": "#4858ab",
+                        "secondary-fixed-dim": "#b1cad7",
+                        "surface-bright": "#393939",
+                        "primary-container": "#5c6bc0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "SF Mono", "ui-monospace", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+        }
+    </style>
+</head>
+<body class="font-body antialiased bg-surface text-on-surface h-screen flex overflow-hidden">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col bg-[#131313] w-64 h-full border-r border-[#2a2a2a] pt-8 pb-4 z-40 fixed left-0 top-0">
+<div class="px-6 mb-8">
+<h1 class="text-lg font-bold text-[#bac3ff] tracking-tight font-['Space_Grotesk'] uppercase">COGNITIVE_MONOLITH</h1>
+<div class="text-xs text-secondary mt-1 font-mono">V.4.0.2_STABLE</div>
+</div>
+<div class="flex-1 px-4 space-y-2 font-['Space_Grotesk'] tracking-tighter uppercase text-xs md:text-sm font-mono">
+<a class="flex items-center px-4 py-3 text-[#b1cad7] opacity-70 hover:bg-[#2a2a2a] hover:text-[#bac3ff] transition-all duration-75 scale-100 active:bg-[#2a2a2a]" href="#">
+<span class="material-symbols-outlined mr-3 text-lg" style="font-variation-settings: 'FILL' 0;">terminal</span>
+                Home
+            </a>
+<a class="flex items-center px-4 py-3 text-[#bac3ff] bg-[#1c1b1b] border-l-4 border-[#bac3ff] font-bold hover:bg-[#2a2a2a] hover:text-[#bac3ff] transition-all duration-75 scale-100 active:bg-[#2a2a2a]" href="#">
+<span class="material-symbols-outlined mr-3 text-lg" style="font-variation-settings: 'FILL' 1;">analytics</span>
+                Results
+            </a>
+<a class="flex items-center px-4 py-3 text-[#b1cad7] opacity-70 hover:bg-[#2a2a2a] hover:text-[#bac3ff] transition-all duration-75 scale-100 active:bg-[#2a2a2a]" href="#">
+<span class="material-symbols-outlined mr-3 text-lg" style="font-variation-settings: 'FILL' 0;">database</span>
+                Exploration
+            </a>
+<a class="flex items-center px-4 py-3 text-[#b1cad7] opacity-70 hover:bg-[#2a2a2a] hover:text-[#bac3ff] transition-all duration-75 scale-100 active:bg-[#2a2a2a]" href="#">
+<span class="material-symbols-outlined mr-3 text-lg" style="font-variation-settings: 'FILL' 0;">menu_book</span>
+                Methodology
+            </a>
+</div>
+<div class="px-6 mt-auto">
+<button class="w-full bg-primary text-on-primary font-headline tracking-widest text-xs py-3 uppercase hover:bg-primary-container transition-colors relative overflow-hidden group">
+<span class="relative z-10 font-bold">INITIATE_SESSION</span>
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-primary-container opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 relative h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-64 right-0 z-50 flex justify-between items-center px-6 bg-[#131313] w-full h-12 border-b border-[#2a2a2a]">
+<div class="text-xl font-black text-[#bac3ff] tracking-tighter font-headline uppercase">
+                MONOLITH_OS
+            </div>
+<div class="flex items-center space-x-6 text-[#bac3ff] font-['Space_Grotesk'] tracking-widest text-[10px] md:text-xs font-mono">
+<button class="hover:bg-[#1c1b1b] transition-colors p-2 text-[#b1cad7]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings_input_component</span>
+</button>
+<button class="hover:bg-[#1c1b1b] transition-colors p-2 text-[#b1cad7]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">sensors</span>
+</button>
+<button class="hover:bg-[#1c1b1b] transition-colors p-2 text-[#b1cad7]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">history</span>
+</button>
+<button class="hover:bg-[#1c1b1b] transition-colors p-2 text-[#b1cad7]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">power_settings_new</span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 overflow-y-auto mt-12 p-8 flex flex-col space-y-8 bg-surface">
+<!-- Page Header -->
+<div class="flex justify-between items-end border-b border-surface-container-high pb-4">
+<div>
+<h2 class="font-headline text-3xl text-primary font-bold tracking-tighter uppercase">Raw Data Plot</h2>
+<p class="font-mono text-sm text-secondary mt-2 uppercase tracking-widest">Reaction Time Analysis / Subject: 001</p>
+</div>
+<div>
+<button class="flex items-center space-x-2 bg-surface-container-high text-primary px-4 py-2 font-mono text-xs uppercase tracking-widest hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">download</span>
+<span>EXPORT FULL CSV</span>
+</button>
+</div>
+</div>
+<!-- Analytical View -->
+<div class="bg-surface-container-low p-6 flex-1 flex flex-col min-h-[600px] border border-outline-variant/15">
+<!-- Chart Controls / Legend -->
+<div class="flex justify-between items-center mb-6">
+<div class="flex space-x-6 font-mono text-xs uppercase tracking-widest">
+<div class="flex items-center space-x-2">
+<div class="w-3 h-3 bg-secondary opacity-50"></div>
+<span class="text-secondary">ROLLING BASELINE</span>
+</div>
+<div class="flex items-center space-x-2">
+<div class="w-3 h-3 bg-primary"></div>
+<span class="text-primary">SESSION DATA POINT</span>
+</div>
+<div class="flex items-center space-x-2">
+<div class="w-3 h-3 bg-tertiary"></div>
+<span class="text-tertiary">PROVISIONAL ANOMALY</span>
+</div>
+</div>
+<div class="flex space-x-4">
+<select class="bg-surface border border-outline-variant text-secondary font-mono text-xs px-3 py-1 focus:border-primary focus:ring-0 uppercase">
+<option>Y-AXIS: REACTION TIME (MS)</option>
+<option>Y-AXIS: ERROR RATE (%)</option>
+</select>
+<select class="bg-surface border border-outline-variant text-secondary font-mono text-xs px-3 py-1 focus:border-primary focus:ring-0 uppercase">
+<option>X-AXIS: DATE/TIME</option>
+<option>X-AXIS: TRIAL INDEX</option>
+</select>
+</div>
+</div>
+<!-- Chart Area (Simulated) -->
+<div class="flex-1 relative border-l border-b border-outline-variant/30 flex">
+<!-- Y-Axis Labels -->
+<div class="absolute -left-12 top-0 bottom-0 flex flex-col justify-between text-right font-mono text-[10px] text-secondary py-2">
+<span>400</span>
+<span>350</span>
+<span>300</span>
+<span>250</span>
+<span>200</span>
+</div>
+<!-- X-Axis Labels -->
+<div class="absolute -bottom-8 left-0 right-0 flex justify-between font-mono text-[10px] text-secondary px-2">
+<span>2023-10-01 08:00</span>
+<span>2023-10-01 12:00</span>
+<span>2023-10-01 16:00</span>
+<span>2023-10-02 08:00</span>
+<span>2023-10-02 12:00</span>
+</div>
+<!-- Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+<div class="w-full border-t border-outline-variant/10 h-0"></div>
+<div class="w-full border-t border-outline-variant/10 h-0"></div>
+<div class="w-full border-t border-outline-variant/10 h-0"></div>
+<div class="w-full border-t border-outline-variant/10 h-0"></div>
+<div class="w-full border-t border-outline-variant/10 h-0"></div>
+</div>
+<!-- Vertical Grid Lines -->
+<div class="absolute inset-0 flex justify-between pointer-events-none">
+<div class="h-full border-l border-outline-variant/10 w-0"></div>
+<div class="h-full border-l border-outline-variant/10 w-0"></div>
+<div class="h-full border-l border-outline-variant/10 w-0"></div>
+<div class="h-full border-l border-outline-variant/10 w-0"></div>
+<div class="h-full border-l border-outline-variant/10 w-0"></div>
+</div>
+<!-- Data Visualization (Mock) -->
+<div class="relative w-full h-full p-4 overflow-hidden">
+<!-- Baseline Trend Area -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none">
+<path d="M 0,150 Q 200,140 400,160 T 800,130 T 1200,145" fill="none" opacity="0.5" stroke="#b1cad7" stroke-dasharray="4,4" stroke-width="1"></path>
+<polygon fill="#b1cad7" opacity="0.05" points="0,180 200,170 400,190 800,160 1200,175 1200,115 800,100 400,130 200,110 0,120"></polygon>
+</svg>
+<!-- Data Points -->
+<div class="absolute w-2 h-2 bg-primary top-[140px] left-[10%]"></div>
+<div class="absolute w-2 h-2 bg-primary top-[135px] left-[20%]"></div>
+<div class="absolute w-2 h-2 bg-primary top-[150px] left-[30%]"></div>
+<div class="absolute w-2 h-2 bg-primary top-[145px] left-[40%]"></div>
+<div class="absolute w-2 h-2 bg-primary top-[165px] left-[50%]"></div>
+<!-- Anomaly -->
+<div class="absolute w-2 h-2 bg-tertiary top-[80px] left-[60%] ring-2 ring-tertiary/50"></div>
+<div class="absolute -top-6 left-[60%] -translate-x-1/2 font-mono text-[10px] text-tertiary bg-surface border border-tertiary/30 px-1">ERR_DEV</div>
+<div class="absolute w-2 h-2 bg-primary top-[155px] left-[70%]"></div>
+<div class="absolute w-2 h-2 bg-primary top-[140px] left-[80%]"></div>
+<div class="absolute w-2 h-2 bg-primary top-[130px] left-[90%]"></div>
+</div>
+</div>
+</div>
+<!-- Contextual Metadata Strip -->
+<div class="grid grid-cols-4 gap-4">
+<div class="bg-surface-container-low p-4 border border-outline-variant/15 flex flex-col justify-between">
+<span class="font-mono text-[10px] text-secondary uppercase">Mean RT</span>
+<span class="font-mono text-xl text-primary mt-2">245<span class="text-xs text-secondary ml-1">ms</span></span>
+</div>
+<div class="bg-surface-container-low p-4 border border-outline-variant/15 flex flex-col justify-between">
+<span class="font-mono text-[10px] text-secondary uppercase">Variance</span>
+<span class="font-mono text-xl text-primary mt-2">12.4<span class="text-xs text-secondary ml-1">σ</span></span>
+</div>
+<div class="bg-surface-container-low p-4 border border-outline-variant/15 flex flex-col justify-between">
+<span class="font-mono text-[10px] text-secondary uppercase">Error Rate</span>
+<span class="font-mono text-xl text-tertiary mt-2">2.1<span class="text-xs text-secondary ml-1">%</span></span>
+</div>
+<div class="bg-surface-container-low p-4 border border-outline-variant/15 flex flex-col justify-between">
+<span class="font-mono text-[10px] text-secondary uppercase">Data Integrity</span>
+<span class="font-mono text-xl text-primary mt-2">99.9<span class="text-xs text-secondary ml-1">%</span></span>
+</div>
+</div>
+</main>
+</div>
+</body></html>
