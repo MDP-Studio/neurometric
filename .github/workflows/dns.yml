@@ -1,4 +1,4 @@
-name: Attach neurometric.mdpstudio.com.au
+name: Configure subdomain DNS
 
 on:
   workflow_dispatch:
